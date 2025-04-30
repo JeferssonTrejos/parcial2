@@ -16,4 +16,11 @@ class ShippingAddresses extends Model
         'special_instructions',
         'payment_methods',
     ];
+
+    //Relacion , una direccion de envio pertenece a un cliente
+    public function customers()
+    {
+        return $this->belongsTo(Customers::class);
+    }
+
 }

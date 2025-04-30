@@ -17,4 +17,18 @@ class Orders extends Model
         'total_paid',
         'order_status',
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customers::class);
+    }
+    public function productsOrders()
+    {
+        return $this->hasMany(ProductsOrders::class);
+    }
+    public function shipmentTracking()
+    {
+        return $this->hasOne(ShipmentTracking::class);
+    }
+    
 }

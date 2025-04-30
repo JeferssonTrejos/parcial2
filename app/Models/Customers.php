@@ -14,4 +14,16 @@ class Customers extends Model
         'birthdate',
         'communication_preferences',
     ];
+
+    // Relacion, un cliente puede tener muchas direcciones de envio
+    public function shippingAddresses()
+    {
+        return $this->hasMany(ShippingAddresses::class);
+    }
+
+    // Relacion, un cliente puede tener muchas ordenes
+    public function orders()
+    {
+        return $this->hasMany(Orders::class);
+    }
 }

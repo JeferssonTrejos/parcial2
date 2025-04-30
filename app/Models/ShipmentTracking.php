@@ -14,4 +14,10 @@ class ShipmentTracking extends Model
         'current_status',
         'package_location',
     ];
+
+    public function shipment()
+    {
+        return $this->belongsTo(Orders::class);
+    }
+    
 }

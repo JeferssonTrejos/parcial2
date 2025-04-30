@@ -16,4 +16,10 @@ class Suppliers extends Model
         'average_replenishment_time',
         'reliability_assessment'
     ];
+    public function supplier()
+    {
+        return $this->hasMany(Products::class);
+    }
+    
+
 }
